@@ -31,7 +31,7 @@ def calc_receipt_total_points(reciept_total: int) -> int:
         return 75
 
     # 25 points if the total is a multiple of 0.25.
-    elif reciept_total % 25 == 0:
+    if reciept_total % 25 == 0:
         return 25
 
     return 0
@@ -41,7 +41,7 @@ def calc_item_points(items: list[Item]) -> int:
     """Calculate points based on items, both total number and description."""
 
     # 5 points for every two items on the receipt.
-    number_of_items_points = floor(len(items) / 2) * 5
+    number_of_items_points = (len(items) // 2) * 5
 
     # If the trimmed length of the item description is a multiple of 3
     # multiply the price by 0.2 and round up to the nearest integer

@@ -7,11 +7,11 @@ from .helper import calculate_points
 router = APIRouter()
 
 
-@router.get("/receipts/{receipt_id}/points", response_model=None)
+@router.get("/receipts/{receipt_id}/points")
 async def get_points(
     request: Request,
-    receipt_id,
-):
+    receipt_id: str,
+) -> dict:
     """Get points endpoint."""
 
     if receipt_id not in request.app.state.reciept_ids:

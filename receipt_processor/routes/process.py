@@ -8,7 +8,7 @@ router = APIRouter()
 
 
 @router.post("/receipts/process")
-async def receipts_process(reciept: Receipt, request: Request):
+async def receipts_process(reciept: Receipt, request: Request) -> dict:
     """Process reciept endpoint."""
 
     # Use deterministic hash to check for duplicates
