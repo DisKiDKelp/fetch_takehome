@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "receipt_processor"
+version = "0.1.0"
+description = ""
+authors = ["Kelton Quint <kelton.quint@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "receipt_processor" }]
+
+
+[tool.poetry.dependencies]
+python = ">=3.11"
+fastapi = ">=0.115.8,<0.116.0"
+uvicorn = ">=0.34.0,<0.35.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.plugins."poetry.application.plugin"]
+"export" = "poetry_plugin_export.plugin:ExportCommand"
